@@ -13,4 +13,14 @@ class UsuarioPedidoLibro extends Model
         'usuario_pedido_id',
         'libro_id'
     ];
+
+    public function usuarioPedido()
+    {
+        $this->belongsTo(UsuarioPedido::class, 'usuario_pedido_id');
+    }
+
+    public function libro()
+    {
+        $this->belongsTo(Libro::class, 'libro_id');
+    }
 }

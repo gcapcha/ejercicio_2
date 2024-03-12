@@ -13,4 +13,9 @@ class Usuario extends Model
         'nombre',
         'correo'
     ];
+
+    public function usuarioPedido()
+    {
+        $this->hasMany(UsuarioPedido::class, 'usuario_id');
+    }
 }

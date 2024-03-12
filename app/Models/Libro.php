@@ -16,5 +16,13 @@ class Libro extends Model
         'anyo'
     ];
 
+    public function usuarioPedidoLibro()
+    {
+        return $this->hasOne(UsuarioPedidoLibro::class, 'libro_id');
+    }
 
+    public function libroAutores()
+    {
+        return $this->hasMany(LibroAutor::class, 'libro_id');
+    }
 }

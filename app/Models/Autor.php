@@ -17,4 +17,9 @@ class Autor extends Model
         'nombre',
         'biografia'
     ];
+
+    public function libros()
+    {
+        return $this->hasMany(LibroAutor::class, 'autor_id');
+    }
 }

@@ -13,4 +13,19 @@ class UsuarioPedido extends Model
         'usuario_id',
         'pedido_id'
     ];
+
+    public function usuario()
+    {
+        $this->belongsTo(Usuario::class, 'usuario_id', 'id');
+    }
+
+    public function pedido()
+    {
+        $this->belongsTo(Pedido::class, 'pedido_id', 'id');
+    }
+
+    public function libros()
+    {
+        $this->hasMany(UsuarioPedidoLibro::class, 'usuario_pedido_id');
+    }
 }

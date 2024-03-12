@@ -13,4 +13,14 @@ class LibroAutor extends Model
         'libro_id',
         'autor_id'
     ];
+
+    public function libro()
+    {
+        return $this->belongsTo(Libro::class, 'libro_id');
+    }
+
+    public function autor()
+    {
+        return $this->hasOne(Autor::class, 'autor_id');
+    }
 }
