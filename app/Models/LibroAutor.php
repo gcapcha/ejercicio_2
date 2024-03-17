@@ -9,6 +9,9 @@ class LibroAutor extends Model
 {
     use HasFactory;
 
+    protected $table = 'libro_autor';
+    public $timestamps = false;
+
     protected $fillable = [
         'libro_id',
         'autor_id'
@@ -21,6 +24,6 @@ class LibroAutor extends Model
 
     public function autor()
     {
-        return $this->hasOne(Autor::class, 'autor_id');
+        return $this->belongsTo(Autor::class, 'autor_id');
     }
 }

@@ -23,6 +23,6 @@ class Libro extends Model
 
     public function libroAutores()
     {
-        return $this->hasMany(LibroAutor::class, 'libro_id');
+        return $this->hasMany(LibroAutor::class, 'libro_id')->with('autor');
     }
 }

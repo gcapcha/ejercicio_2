@@ -18,4 +18,9 @@ class Pedido extends Model
         'precio'
     ];
 
+
+    public function usuarioPedido()
+    {
+        return $this->hasOne(UsuarioPedido::class, 'pedido_id');
+    }
 }
